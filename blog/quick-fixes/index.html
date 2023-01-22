@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Johannes Olzem</title>
+    <meta name="description" content="Johannes Olzem's Webspace.">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favico.ico">
+</head>
+<body>
+    <div id="root">
+        <header>
+            <h1>Johannes Olzem's Webspace</h1>
+        </header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#">Blog</a>
+            <a href="/about/">About Me</a>
+            <a href="/contact/">Contact</a>
+            <a href="/donate/">Donate</a>
+        </nav>
+        <main>
+            <h2>Quick Fixes</h2>
+            <p>
+                This is a page with small problems, to which I have found easy solutions, 
+                so as to not litter the blog page.
+            </p><br>
+            <ul style="text-align: left;">
+                <li>
+                    <u>Problem:</u> 
+                        Nextcloud File not supported Error (<code>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).<br>
+                    <u>Solution:</u> 
+                        Upload over IP and port rather than over nginx.<br>
+                    <u>Explanation:</u> 
+                        <a href="https://www.rfc-editor.org/rfc/rfc2616#section-10.4.14" target="_blank">
+                            Nginx 413 Error - Request entity too large
+                        </a><br>
+                </li>
+                <br>
+                <!--<li>
+                    <u>Problem:</u> 
+                         (<code></code>).<br>
+                    <u>Solution:</u> 
+                        <br>
+                    <u>Explanation:</u> 
+                        <a href="" target="_blank">
+                            
+                        </a><br>
+                </li>
+                <br>-->
+            </ul>
+        </main>
+        <footer>
+            <h6><a href=""><script>document.write(window.location.href);</script></a></h6>
+        </footer>
+    </div>
+</body>
+</html>

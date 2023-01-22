@@ -6,7 +6,6 @@
 :root {
   --txt: #d3c6aa;
   --accent: #a7c080;
-  --main-bg: #2d353b;
   --body-bg: #2d353b;
   --border: 4pt;
   --font-body: "Consolas", monaco, "Liberation Mono", "Lucida Console", monospace;
@@ -24,7 +23,6 @@ body {
   max-width: 900px;
   min-height: 100vh;
   margin: 0 auto;
-  background: var(--main-bg);
   border-radius: var(--border);
 }
 
@@ -82,6 +80,12 @@ a {
   color: var(--txt);
   text-decoration: none;
   transition: 300ms;
+}
+
+code {
+  background: #232a2e;
+  padding: .2rem .3rem;
+  border-radius: .3rem;
 }
 
 a:hover,
