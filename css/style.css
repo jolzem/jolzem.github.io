@@ -83,6 +83,10 @@ a {
   transition: 300ms;
 }
 
+b {
+  text-shadow: 0 0 .4rem var(--txt);
+}
+
 code {
   background: var(--dark);
   padding: .2rem .3rem;
