@@ -7,6 +7,7 @@
   --txt: #d3c6aa;
   --accent: #a7c080;
   --body-bg: #2d353b;
+  --dark: #232a2e;
   --border: 4pt;
   --font-body: "Consolas", monaco, "Liberation Mono", "Lucida Console", monospace;
 }
@@ -83,7 +84,7 @@ a {
 }
 
 code {
-  background: #232a2e;
+  background: var(--dark);
   padding: .2rem .3rem;
   border-radius: .3rem;
 }
