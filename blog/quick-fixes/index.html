@@ -23,36 +23,45 @@
         <main>
             <h2>Quick Fixes</h2>
             <p>
-                This is a page with small problems, to which I have found easy solutions, 
+                This is a page with small problems, to which I have found easy solutions,
                 so as to not litter the blog page.
             </p><br>
             <ul style="text-align: left;">
                 <li>
-                    <u>Problem:</u> 
+                    <u>Problem:</u>
                         Nextcloud File not supported Error (<code>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).<br>
-                    <u>Solution:</u> 
+                    <u>Solution:</u>
                         Upload over IP and port rather than over nginx.<br>
-                    <u>Explanation:</u> 
+                    <u>Explanation:</u>
                         <a href="https://www.rfc-editor.org/rfc/rfc2616#section-10.4.14" target="_blank">
                             Nginx 413 Error - Request entity too large
                         </a><br>
                 </li>
                 <br>
                 <li>
-                    <u>Problem:</u> 
+                    <u>Problem:</u>
                         <code>Connected without internet</code> on Android after setting PiHole as DNS Server.<br>
-                    <u>Solution:</u> 
+                    <u>Solution:</u>
                     Make sure you forward both <b>TCP</b> and <b>UDP</b> of Port 53 from your Docker Container.<br>
                 </li>
                 <br>
+                <li>
+                    <u>Problem:</u>
+                         ThinkPad R61 (or any older ThinkPad model, I believe) repeated beep at startup.<br>
+                    <u>Solution:</u>
+                        Check keyboard connector / swap out keyboard.<br>
+                    <u>Explanation:</u>
+                        No keyboard detected on bootup.<br>
+                </li>
+                <br>
                 <!--<li>
-                    <u>Problem:</u> 
+                    <u>Problem:</u>
                          (<code></code>).<br>
-                    <u>Solution:</u> 
+                    <u>Solution:</u>
                         <br>
-                    <u>Explanation:</u> 
+                    <u>Explanation:</u>
                         <a href="" target="_blank">
-                            
+
                         </a><br>
                 </li>
                 <br>-->
