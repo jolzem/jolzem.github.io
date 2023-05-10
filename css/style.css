@@ -1,14 +1,8 @@
-@font-face {
-  font-family: "Consolas";
-  src: url("Consolas.woff2") format("woff2");
-}
-
 :root {
-  --txt: #d3c6aa;
-  --accent: #a7c080;
-  --body-bg: #2d353b;
-  --dark: #232a2e;
-  --border: 4pt;
+  --txt: #c4c7c4;
+  --body-bg: #272c31;
+  --dark: #000;
+  --accent: #42a5f5;
   --font-body: "Consolas", monaco, "Liberation Mono", "Lucida Console", monospace;
 }
 
@@ -21,19 +15,23 @@ body {
 }
 
 #root {
-  max-width: 900px;
+  max-width: 1000px;
   min-height: 100vh;
   margin: 0 auto;
-  border-radius: var(--border);
 }
 
 header {
-  padding: 1rem 0;
-  border-radius: inherit;
+  padding: 1.5rem 0;
 }
 
-header h1 {
+header a {
   color: var(--accent);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+header a:hover {
+  text-decoration: none !important;
 }
 
 nav {
@@ -52,6 +50,13 @@ main {
 main p {
   max-width: 70%;
   margin: 0 auto;
+}
+
+main ul {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  max-width: fit-content;
+  text-align: left;
 }
 
 .blog-entries a {
@@ -75,6 +80,7 @@ h6 {
 p {
   margin: 1rem;
   font-size: 1.1em;
+  line-height: 1.5rem;
 }
 
 a {
@@ -97,14 +103,4 @@ a:hover,
 a:active {
   text-decoration: underline !important;
   color: var(--accent);
-}
-
-/* Auto double line break */
-br:after {
-  content: "\a\a";
-  white-space: pre;
-}
-
-br {
-  content: "";
 }
