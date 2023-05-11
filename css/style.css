@@ -1,9 +1,21 @@
+@font-face {
+  font-family: "Inter";
+  src: url("Inter-Regular.woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("Inter-Bold.woff2");
+  font-weight: 800;
+}
+
 :root {
-  --txt: #c4c7c4;
-  --body-bg: #272c31;
-  --dark: #000;
-  --accent: #42a5f5;
-  --font-body: "Consolas", monaco, "Liberation Mono", "Lucida Console", monospace;
+  --txt: #e2dfdb;
+  --body-bg: #222426;
+  --accent: #9a9184;
+  --border: #3f4447;
+  --font-body: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 body {
@@ -15,32 +27,36 @@ body {
 }
 
 #root {
-  max-width: 1000px;
+  max-width: 800px;
   min-height: 100vh;
   margin: 0 auto;
 }
 
 header {
-  padding: 1.5rem 0;
-}
-
-header a {
-  color: var(--accent);
-  font-size: 2rem;
+  padding: 1.5rem 0 2.5rem 0;
   font-weight: bold;
+  font-size: 2rem;
 }
 
-header a:hover {
-  text-decoration: none !important;
+nav,
+footer {
+  margin-bottom: 1.7rem;
 }
 
-nav {
-  padding-bottom: 1rem;
+nav a {
+  border: 1px solid var(--border);
+  border-radius: .3rem;
+  margin: .7rem;
+  padding: .4rem 1.2rem;
+  text-decoration: none;
+  box-shadow: 0px 2px 3px -2px rgba(0,0,0,.3);
+  user-select: none;
+  cursor: pointer;
 }
 
-nav a,
-footer a {
-  padding: 1rem;
+nav a:hover {
+  color: var(--txt);
+  border: 1px solid #51585c;
 }
 
 main {
@@ -48,7 +64,6 @@ main {
 }
 
 main p {
-  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -66,15 +81,7 @@ main ul {
 
 .inline {
   text-decoration: underline;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 1rem;
+  color: #06c;
 }
 
 p {
@@ -89,18 +96,15 @@ a {
   transition: 300ms;
 }
 
-b {
-  text-shadow: 0 0 .4rem var(--txt);
+a:hover,
+a:active {
+  color: var(--accent);
 }
 
 code {
-  background: var(--dark);
   padding: .2rem .3rem;
   border-radius: .3rem;
+  border: 1px solid var(--border);
+  margin: .3rem;
 }
 
-a:hover,
-a:active {
-  text-decoration: underline !important;
-  color: var(--accent);
-}
