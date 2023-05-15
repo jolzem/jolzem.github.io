@@ -61,6 +61,7 @@ nav a:hover {
 
 main {
   padding-bottom: 2.5rem;
+  overflow: hidden;
 }
 
 main p {
@@ -77,6 +78,17 @@ main ul {
 .blog-entries a {
   padding-top: 1rem;
   display: block;
+}
+
+.author {
+  float: left;
+  max-width: 400px;
+}
+
+.date {
+  overflow: hidden;
+  text-align: right;
+  margin-bottom: 2rem;
 }
 
 .inline {
