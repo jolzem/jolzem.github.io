@@ -52,6 +52,15 @@
                     <u>Explanation:</u>
                         No keyboard detected on bootup.<br>
                 </li>
+                <li>
+                    <u>Problem:</u>
+                         Pacman install fails with 404 (<code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code>).<br>
+                    <u>Solution:</u>
+                        Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href="https://archlinux.org/mirrorlist/">https://archlinux.org/mirrorlist/</a>.<br>
+                        Then run <code>sudo pacman -Syyu</code> to update with the new mirrorlist. Make sure to use 2 y's, to force the new changes.<br>
+                    <u>Explanation:</u>
+                        Your mirrorlist is outdated, possibly due to the recent <a href="https://archlinux.org/news/git-migration-completed/">pacman git migration</a>.<br>
+                </li>
                 <br>
                 <!--<li>
                     <u>Problem:</u>

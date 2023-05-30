@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>How to create a Rust server on Linux - Blog - Johannes Olzem</title>
+    <meta name="description" content="Johannes Olzem's Webspace.">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favico.ico">
+</head>
+<body>
+    <div id="root">
+        <header>
+            <a href="/">Johannes Olzem's Webspace</a>
+        </header>
+        <nav>
+            <a href="/blog/">Blog</a>
+            <a href="/about/">About Me</a>
+            <a href="/contact/">Contact</a>
+            <a href="/donate/">Donate</a>
+        </nav>
+        <main>
+            <h1>How to create a Rust server on Linux</h1>
+            <div class="author">Johannes Olzem</div>
+            <div class="date">May 23, 2023</div>
+            <h2>Table of Contents</h2>
+            <ul>
+              <li><a href="#Requirements">Requirements</a></li>
+              <li><a href="#SteamCMD">SteamCMD</a><br /></li>
+              <li><a href="#Installing">Installing</a><br /></li>
+              <li><a href="#Running">Running</a></li>
+            </ul>
+            <h2 id="Requirements">Requirements</h2>
+            <ul>
+              <li>Debian Linux</li>
+              <li>&#62;5GB of RAM</li>
+              <li>&#62;4.5GB of free disc space</li>
+            </ul>
+            <h2 id="SteamCMD">SteamCMD</h2>
+            <h3>Configuring the envoirenment</h3>
+            <p>
+              Create a user with the name "steam" and give it a password.
+            </p>
+            <p class="code">
+              sudo useradd -m steam
+            </p>
+            <p class="code">
+              sudo passwd steam
+            </p>
+            <br />
+            <p>
+              When prompted, enter a new password for the "steam" user. <br />
+              Then switch to the "steam" user and go to its home folder.
+            </p>
+            <p class="code">
+              su steam
+            </p>
+            <p class="code">
+              cd
+            </p>
+            <br />
+            <p>
+              Enable the contrib and non-free repositories by changing your <code>/etc/apt/sources.list</code> to resemble the following:
+            </p>
+            <p class="code" style="text-align:left;">
+              deb http://deb.debian.org/debian bullseye main contrib non-free<br />
+              deb-src http://deb.debian.org/debian bullseye main contrib non-free<br />
+              <br />
+              deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free<br />
+              deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free<br />
+              <br />
+              deb http://deb.debian.org/debian bullseye-updates main contrib non-free<br />
+              deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free<br />
+            </p>
+            <h3>Installing SteamCMD</h3>
+            <p>
+              Finally, to install SteamCMD run:
+            </p>
+            <p class="code">
+              sudo apt install steamcmd
+            </p>
+            <br />
+            <h2 id="Installing">Installing</h2>
+            <p>
+              Run SteamCMD
+            </p>
+            <p class="code">
+              steamcmd
+            </p>
+            <br />
+            <p>
+            After a short update period, a prompt like <code>Steam&#62;</code> should appear.<br />
+            To login anonymously type:
+            </p>
+            <p class="code">
+             login anonymous
+            </p>
+            <br />
+            <p>
+              Now install the Rust Dedicated Server application.
+            </p>
+            <p class="code">
+              app_update 258550
+            </p>
+            <p>
+              This will install and verify the Rust server.<br />
+              On my ~100 Mbit/s connection this took around 15-20 Minutes. <br />
+              <br />
+              Afterwards you can quit the SteamCMD shell.
+            </p>
+            <p class="code">
+              quit
+            </p>
+            <br />
+            <h2 id="Running">Running</h2>
+            <p>
+              First navigate to the Rust server directory.
+            </p>
+            <p class="code">
+              cd ~/Steam/steamapps/common/rust_dedicated
+            </p>
+            <br />
+            <p>
+              Finally, start up the Rust server by running:
+            </p>
+            <p class="code">
+              ./RustDedicated -batchmode
+            </p>
+            <br />
+            <p>
+              There are several arguments you can pass to the server to change its behaviour.
+            </p>
+            <br />
+            <table>
+              <tbody><tr>
+              <th>Parameter
+              </th>
+              <th>Default
+              </th>
+              <th>Description
+              </th></tr>
+              <tr>
+              <td><code>+server.ip</code>
+              </td>
+              <td><code>0.0.0.0</code>
+              </td>
+              <td>Sets the Server IP. Leave it to 0.0.0.0 unless you have multiple IPs.
+              </td></tr>
+              <tr>
+              <td><code>+server.port</code>
+              </td>
+              <td><code>28015</code>
+              </td>
+              <td>Sets the port the server will use. (default 28015 UDP)
+              </td></tr>
+              <tr>
+              <td><code>+rcon.ip</code>
+              </td>
+              <td><code>0.0.0.0</code>
+              </td>
+              <td>Sets the RCON IP.
+              </td></tr>
+              <tr>
+              <td><code>+rcon.port</code>
+              </td>
+              <td><code>28016</code>
+              </td>
+              <td>Port to listen to for RCON.
+              </td></tr>
+              <tr>
+              <td><code>+rcon.web</code>
+              </td>
+              <td><code>0</code>
+              </td>
+              <td>If set to true, use websocket rcon. If set to false use legacy, source engine rcon.
+              </td></tr>
+              <tr>
+              <td><code>+server.tickrate</code>
+              </td>
+              <td><code>10</code>
+              </td>
+              <td>Server refresh rate - Not recommended to go above 30.
+              </td></tr>
+              <tr>
+              <td><code>+server.hostname</code>
+              </td>
+              <td><code>"Your Server Name"</code>
+              </td>
+              <td>The displayed name of your server.
+              </td></tr>
+              <tr>
+              <td><code>+server.identity</code>
+              </td>
+              <td><code>"my_server_identity"</code>
+              </td>
+              <td>Changes path to your server data rust/server/my_server_identity. Useful for running multiple instances.
+              </td></tr>
+              <tr>
+              <td><code>+server.maxplayers</code>
+              </td>
+              <td><code>50</code>
+              </td>
+              <td>Maximum amount of players allowed to connect to your server at a time.
+              </td></tr>
+              <tr>
+              <td><code>+server.worldsize</code>
+              </td>
+              <td><code>3000</code>
+              </td>
+              <td>Defines the size of the map generated (min 1000, max 6000)
+              </td></tr>
+              <tr>
+              <td><code>+server.seed</code>
+              </td>
+              <td><code>50000</code>
+              </td>
+              <td>Is the map generation seed.
+              </td></tr>
+              <tr>
+              <td><code>+server.saveinterval</code>
+              </td>
+              <td><code>600</code>
+              </td>
+              <td>Time in seconds for server save.
+              </td></tr>
+              <tr>
+              <td><code>+rcon.password</code>
+              </td>
+              <td><code>"YourPassword"</code>
+              </td>
+              <td>Sets the RCON password
+              </td></tr>
+              <tr>
+              <td><code>-logfile</code>
+              </td>
+              <td><code>gamelog.txt</code>
+              </td>
+              <td>If you're using a script, you'd better put the current date as a filename, otherwise, it'll be erased on every start.
+              </td></tr>
+              <tr>
+              <td><code>-silent-crashes</code>
+              </td>
+              <td><code> - </code>
+              </td>
+              <td>Won't display a crash dialog and will restart automatically if server is installed as service.
+              </td></tr></tbody>
+            </table>
+            <br />
+            <h2>Sources</h2>
+            <ul>
+              <li>
+                <a href="https://wiki.facepunch.com/rust/Creating-a-server">Rust Wiki, "Creating a server"</a>
+              </li>
+              <li>
+                <a href="https://developer.valvesoftware.com/wiki/SteamCMD#Linux">Valve Developer Community, "SteamCMD"</a>
+              </li>
+              <li>
+                <a href="https://www.rustafied.com/how-to-host-your-own-rust-server">Rustafied, "How to: Host your own Rust Dedicated Server"</a>
+              </li>
+              <li>
+                <a href="https://developer.valvesoftware.com/wiki/Rust_Dedicated_Server">Valve Developer Community, "Rust Dedicated Server"</a>
+              </li>
+            </ul>
+        </main>
+        <footer>
+            <h6><a href=""><script>document.write(window.location.href);</script></a></h6>
+        </footer>
+    </div>
+</body>
+</html>
