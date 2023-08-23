@@ -1,83 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Quick Fixes - Blog - Johannes Olzem</title>
-    <meta name="description" content="Johannes Olzem's Webspace.">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favico.ico">
+  <title>Quick Fixes - Blog - Johannes Olzem</title>
+  <meta name="description" content="Johannes Olzem's Webspace.">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favico.ico">
 </head>
 <body>
-    <div id="root">
-        <header>
-            <a href="/">Johannes Olzem's Webspace</a>
-        </header>
-        <nav>
-            <a href="/blog/">Blog</a>
-            <a href="/about/">About Me</a>
-            <a href="/contact/">Contact</a>
-            <a href="/donate/">Donate</a>
-        </nav>
-        <main>
-            <h2>Quick Fixes</h2>
-            <p>
-                This is a page with small problems, to which I have found easy solutions,
-                so as to not litter the blog page.
-            </p><br>
-            <ul style="text-align: left;">
-                <li>
-                    <u>Problem:</u>
-                        Nextcloud File not supported Error (<code>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).<br>
-                    <u>Solution:</u>
-                        Upload over IP and port rather than over nginx.<br>
-                    <u>Explanation:</u>
-                        <a href="https://www.rfc-editor.org/rfc/rfc2616#section-10.4.14" target="_blank">
-                            Nginx 413 Error - Request entity too large
-                        </a><br>
-                </li>
-                <br>
-                <li>
-                    <u>Problem:</u>
-                        <code>Connected without internet</code> on Android after setting PiHole as DNS Server.<br>
-                    <u>Solution:</u>
-                    Make sure you forward both <b>TCP</b> and <b>UDP</b> of Port 53 from your Docker Container.<br>
-                </li>
-                <br>
-                <li>
-                    <u>Problem:</u>
-                         ThinkPad R61 (or any older ThinkPad model, I believe) repeated beep at startup.<br>
-                    <u>Solution:</u>
-                        Check keyboard connector / swap out keyboard.<br>
-                    <u>Explanation:</u>
-                        No keyboard detected on bootup.
-                </li>
-                <br>
-                <li>
-                    <u>Problem:</u>
-                         Pacman install fails with 404 (<code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code>).<br>
-                    <u>Solution:</u>
-                        Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href="https://archlinux.org/mirrorlist/">https://archlinux.org/mirrorlist/</a>.<br>
-                        Then run <code>sudo pacman -Syyu</code> to update with the new mirrorlist. Make sure to use 2 y's, to force the new changes.<br>
-                    <u>Explanation:</u>
-                        Your mirrorlist is outdated, possibly due to the recent <a href="https://archlinux.org/news/git-migration-completed/">pacman git migration</a>.<br>
-                </li>
-                <!--<li>
-                    <u>Problem:</u>
-                         (<code></code>).<br>
-                    <u>Solution:</u>
-                        <br>
-                    <u>Explanation:</u>
-                        <a href="" target="_blank">
-
-                        </a><br>
-                </li>
-                <br>-->
-            </ul>
-        </main>
-        <footer>
-            <h6><a href=""><script>document.write(window.location.href);</script></a></h6>
-        </footer>
-    </div>
+  <div id="root" class="quick-fixes">
+    <header>
+      <a href="/">Johannes Olzem's Webspace</a>
+    </header>
+    <nav>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About Me</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <main>
+      <h2>Quick Fixes</h2>
+      <p>
+        This is a page with small problems, to which I have found easy solutions,
+        so as to not litter the blog page.
+      </p><br>
+      <table class='quick-fixes-table'>
+        <tr>
+          <th>Problem</th>
+          <th>Solution</th>
+          <th>Explanation</th>
+        </tr>
+        <tr>
+          <td>Nextcloud File not supported Error (<code style='line-break: anywhere'>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).</td>
+          <td>Upload over IP and port rather than over nginx proxy.</td>
+          <td>The request payload (the data you are trying to upload) is too large for nginx.</td>
+        </tr>
+        <tr>
+          <td><code>Connected without internet</code> on Android after setting PiHole as DNS Server.<br></td>
+          <td>Make sure you forward both <b>TCP</b> and <b>UDP</b> of Port 53 from your Docker container.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ThinkPad R61 (or any older ThinkPad model, I believe) repeated beep at startup.</td>
+          <td>Check keyboard connector / swap out keyboard.</td>
+          <td>No keyboard detected on bootup.</td>
+        </tr>
+        <tr>
+          <td>Pacman install fails with 404 (<code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code>).</td>
+          <td>
+            Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href="https://archlinux.org/mirrorlist/">https://archlinux.org/mirrorlist/</a>.<br>
+            Then run <code>sudo pacman -Syyu</code> to update with the new mirrorlist. Make sure to use 2 y's, to force the new changes.
+          </td>
+          <td>Your mirrorlist is outdated, possibly due to the recent <a href="https://archlinux.org/news/git-migration-completed/">pacman git migration</a>.</td>
+        </tr>
+      </table>
+    </main>
+    <footer>
+      <h6><a href><script>document.write(window.location.href);</script></a></h6>
+    </footer>
+  </div>
 </body>
 </html>
+
