@@ -1,19 +1,18 @@
-
 @font-face {
-  font-family: "DM Mono";
-  src: url("DMMono-Regular.woff2");
+  font-family: 'DM Mono';
+  src: url('DMMono-Regular.woff2');
   font-weight: normal;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("DMMono-Medium.woff2");
+  font-family: 'DM Mono';
+  src: url('DMMono-Medium.woff2');
   font-weight: bold;
 }
 
 @font-face {
-  font-family: "DM Mono";
-  src: url("DMMono-Italic.woff2");
+  font-family: 'DM Mono';
+  src: url('DMMono-Italic.woff2');
   font-style: italic;
 }
 
@@ -24,7 +23,7 @@
   --border: #76818e;
   --border-light: #a0a8b1;
   --green: #5da892;
-  --font-body: "DM Mono", "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-body: 'DM Mono', 'Lucida Console', 'Monaco', 'Courier New', 'Courier', monospace;
 }
 
 body {
