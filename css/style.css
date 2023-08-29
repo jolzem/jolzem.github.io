@@ -33,11 +33,7 @@ body {
   text-align: center;
   background-color: var(--body-bg);
   margin: 0;
-}
-
-#root {
   max-width: 800px;
-  min-height: 100vh;
   margin: 0 auto;
 }
 

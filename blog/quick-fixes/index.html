@@ -1,64 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
   <title>Quick Fixes - Blog - Johannes Olzem</title>
-  <meta name="description" content="Johannes Olzem's Webspace.">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favico.ico">
+  <meta name='description' content="Johannes Olzem's Webspace.">
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='/css/style.css'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='/favico.ico'>
 </head>
-<body>
-  <div id="root" class="quick-fixes">
-    <header>
-      <a href="/">Johannes Olzem's Webspace</a>
-    </header>
-    <nav>
-      <a href="/blog/">Blog</a>
-      <a href="/about/">About Me</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-    <main>
-      <h2>Quick Fixes</h2>
-      <p>
-        This is a page with small problems, to which I have found easy solutions,
-        so as to not litter the blog page.
-      </p><br>
-      <table class='quick-fixes-table'>
-        <tr>
-          <th>Problem</th>
-          <th>Solution</th>
-          <th>Explanation</th>
-        </tr>
-        <tr>
-          <td>Nextcloud File not supported Error (<code style='line-break: anywhere'>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).</td>
-          <td>Upload over IP and port rather than over nginx proxy.</td>
-          <td>The request payload (the data you are trying to upload) is too large for nginx.</td>
-        </tr>
-        <tr>
-          <td><code>Connected without internet</code> on Android after setting PiHole as DNS Server.<br></td>
-          <td>Make sure you forward both <b>TCP</b> and <b>UDP</b> of Port 53 from your Docker container.</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>ThinkPad R61 (or any older ThinkPad model, I believe) repeated beep at startup.</td>
-          <td>Check keyboard connector / swap out keyboard.</td>
-          <td>No keyboard detected on bootup.</td>
-        </tr>
-        <tr>
-          <td>Pacman install fails with 404 (<code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code>).</td>
-          <td>
-            Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href="https://archlinux.org/mirrorlist/">https://archlinux.org/mirrorlist/</a>.<br>
-            Then run <code>sudo pacman -Syyu</code> to update with the new mirrorlist. Make sure to use 2 y's, to force the new changes.
-          </td>
-          <td>Your mirrorlist is outdated, possibly due to the recent <a href="https://archlinux.org/news/git-migration-completed/">pacman git migration</a>.</td>
-        </tr>
-      </table>
-    </main>
-    <footer>
-      <h6><a href><script>document.write(window.location.href);</script></a></h6>
-    </footer>
-  </div>
+<body class='quick-fixes'>
+  <header>
+    <a href='/'>Johannes Olzem's Webspace</a>
+  </header>
+  <nav>
+    <a href='/blog/'>Blog</a>
+    <a href='/about/'>About Me</a>
+    <a href='/contact/'>Contact</a>
+  </nav>
+  <main>
+    <h2>Quick Fixes</h2>
+    <p>
+      This is a page with small problems, to which I have found easy solutions,
+      so as to not litter the blog page.
+    </p><br>
+    <table class='quick-fixes-table'>
+      <tr>
+        <th>Problem</th>
+        <th>Solution</th>
+        <th>Explanation</th>
+      </tr>
+      <tr>
+        <td>Nextcloud File not supported Error (<code style='line-break: anywhere'>exif_read_data(): File not supported at /var/www/html/lib/private/Metadata/Provider/ExifProvider.php#59</code>).</td>
+        <td>Upload over IP and port rather than over nginx proxy.</td>
+        <td>The request payload (the data you are trying to upload) is too large for nginx.</td>
+      </tr>
+      <tr>
+        <td><code>Connected without internet</code> on Android after setting PiHole as DNS Server.<br></td>
+        <td>Make sure you forward both <b>TCP</b> and <b>UDP</b> of Port 53 from your Docker container.</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ThinkPad R61 (or any older ThinkPad model, I believe) repeated beep at startup.</td>
+        <td>Check keyboard connector / swap out keyboard.</td>
+        <td>No keyboard detected on bootup.</td>
+      </tr>
+      <tr>
+        <td>Pacman install fails with 404 (<code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code>).</td>
+        <td>
+          Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href='https://archlinux.org/mirrorlist/'>https://archlinux.org/mirrorlist/</a>.<br>
+          Then run <code>sudo pacman -Syyu</code> to update with the new mirrorlist. Make sure to use 2 y's, to force the new changes.
+        </td>
+        <td>Your mirrorlist is outdated, possibly due to the recent <a href='https://archlinux.org/news/git-migration-completed/'>pacman git migration</a>.</td>
+      </tr>
+    </table>
+  </main>
+  <footer>
+    <h6><a href><script>document.write(window.location.href);</script></a></h6>
+  </footer>
 </body>
 </html>
 
