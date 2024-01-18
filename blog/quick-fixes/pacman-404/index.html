@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Quick Fix - Blog - Johannes Olzem</title>
+  <meta name='description' content="Johannes Olzem's Webspace.">
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='/css/style.css'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='icon' href='/favico.ico'>
+</head>
+<body>
+  <header>
+    <a href='/'>Johannes Olzem's Webspace</a>
+  </header>
+  <nav>
+    <a href='/blog/'>Blog</a>
+    <a href='/about/'>About Me</a>
+    <a href='/contact/'>Contact</a>
+  </nav>
+  <main>
+    <h1>Pacman install fails with 404</h1>
+    <h2><code>error: failed retrieving file 'X' from Y : The requested URL returned error: 404</code></h2>
+    <br>
+    <p>
+    Replace <code>/etc/pacman.d/mirrorlist</code> with a new file generated at <a href='https://archlinux.org/mirrorlist/'>https://archlinux.org/mirrorlist/</a>.
+    <br>
+    Then run <code>sudo pacman -Syyu</code> to update the package database with the new mirrorlist. Make sure to use 2 y's, to force the new changes.
+    </p>
+    <h2>Explanation</h2>
+    <p>
+    Your mirrorlist is outdated, possibly due to the recent <a href='https://archlinux.org/news/git-migration-completed/'>pacman git migration</a>.
+    </p>
+  </main>
+  <footer>
+      <h6><a href><script>document.write(window.location.href);</script></a></h6>
+  </footer>
+</body>
+</html>
