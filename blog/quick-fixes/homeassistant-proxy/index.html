@@ -24,11 +24,21 @@
     <h1>HomeAssistant not connecting over reverse proxy</h1>
     <br>
     <p>
-      Make sure you have enabled <em>Websockets Supports</em> or similar functionality in your reverse proxy client.
+      Make sure you have enabled <em>Websockets Supports</em> or similar functionality in your reverse proxy client.<br><br>
+      If you are getting a <em>400 Bad Request</em> error, find the HomeAssistant log file and look for the following error message:<br>
+      <code>A request from a reverse proxy was received from 12.34.56.78, but your HTTP integration is not set-up for reverse proxies</code><br><br>
+      In your <code>configuration.yaml</code> file, add the following lines:<br>
+      <pre style="text-align:left;">
+http:<br>
+  use_x_forwarded_for: true<br>
+  trusted_proxies:<br>
+    - 12.34.56.78 # The IP address from the error message
+</pre>
     </p>
     <h2>Explanation</h2>
     <p>
-      HomeAssistant uses websockets to communicate with the browser.
+      HomeAssistant uses websockets to communicate with the browser.<br><br>
+      If you are using a reverse proxy, the IP address of the incoming connection is not trusted and gets rejected by HomeAssistant.<br>
     </p>
   </main>
   <footer>
