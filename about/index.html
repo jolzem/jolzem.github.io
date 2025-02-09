@@ -1,64 +1,84 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
   <title>About - Johannes Olzem</title>
-  <meta name='description' content="Johannes Olzem's Webspace.">
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='stylesheet' href='/css/style.css'>
-  <link rel='icon' href='/favico.ico'>
+  <meta name="description" content="Johannes Olzem's personal website">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favico.ico">
 </head>
-<body>
+<body class="body">
   <header>
-    <a href='/' class='home-ref'>
-      <img src='/assets/logo.png' alt='Johannes Olzem'>
-      <span>Johannes Olzem</span>
+    <a href="/">
+      <img src="/img/logo.png">
     </a>
-    <nav>
-      <a href='/blog/'>Blog</a>
-      <a href='/about/'>About Me</a>
-      <a href='/contact/'>Contact</a>
-    </nav>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </header>
   <main>
-    <h2>About Me</h2>
-    <!--<img src='/img/me.png' style='float:left;margin:1rem;border-radius:1rem;height:256px;'>-->
-    <p style='margin-bottom: 2rem;'>
-      Hey there!<br />
-      My name is Johannes, and I'm a computer enthusiast born and raised in Germany.
-      Recently, I graduated from school, majoring in IT and English, and I am now training to become an IT specialist.
-      I am passionate about most things related to technology, but specifically I am passionate about using free and open-source software,
-      exploring different aspects of Linux, setting up and tinkering with servers,
-      and learning about privacy and security. When I'm not busy with the command line, I enjoy playing video games and building/modifying mechanical keyboards.
-      Apart from computers, I also have an interest in cars, ranging from classic to modern sports cars, and like riding my somewhat odd looking bicycle.
+    <h1>Johannes Olzem</h1>
+    <blockquote>Less is more</blockquote>
+    <h2>About me</h2>
+    <img src="/img/portrait.png" alt="Me" class="portrait">
+    <p>
+      Hey there!
+      My name is Johannes, and I'm a computer enthusiast born and raised in
+      Germany. Recently, I graduated from school, majoring in IT and English,
+      and I am now training to become an IT specialist. I am passionate about
+      most things related to technology, but specifically I am passionate about
+      using free and open-source software, exploring different aspects of
+      Linux, setting up and tinkering with servers, and learning about online
+      privacy and security. When I'm not busy with the command line, I enjoy
+      playing video games and building/modifying mechanical keyboards. Apart
+      from computers I enjoy making my own pourover coffee, I am a big fan of
+      technical fashion and I like cars.
     </p>
     <h2>My Skills</h2>
-    <h3>Languages</h3>
-    <p style='margin: 1rem !important; text-align: center;'>I have at least basic knowledge in the following programming languages:</p>
-    <ul>
-      <li>HTML &amp; CSS</li>
-      <li>Java</li>
-      <li>Python</li>
-      <li>PHP</li>
-    </ul>
-    <h3>Other Technologies</h3>
-    <ul>
-      <li>Linux</li>
-      <li>Git</li>
-      <li>SQL</li>
-      <li>LaTeX</li>
-      <li>Docker</li>
-    </ul>
-    <p>If you are interested in a research paper I wrote for a mandatory school project about Linux you can find it <a href='/facharbeit.pdf'>here</a>. My grade for this project was a 13 out of 15 possible grade points.</p>
+    <p>I have at least basic knowledge in the following technologies:</p>
+    <div style="float:left" class="skills">
+      <h3>Languages</h3>
+      <ul>
+        <li>HTML &amp; CSS</li>
+        <li>Java</li>
+        <li>Python</li>
+        <li>PHP</li>
+      </ul>
+    </div>
+    <div style="float:right" class="skills">
+      <h3>Other technologies</h3>
+      <ul>
+        <li>Linux</li>
+        <li>Git</li>
+        <li>SQL</li>
+        <li>LaTeX</li>
+        <li>Docker</li>
+      </ul>
+    </div>
+    <br>
     <h2>About this website</h2>
     <p>
-      This website has no ads or trackers and does not use cookies.<br>
-      It is also free and open source under the <a href='/LICENSE.txt'>GNU General Public License v3</a>.<br>
-      <a href='https://github.com/jolzem/jolzem.github.io/'>View Source Code</a><br>
+      While I might not have been using the internet much or at all during the
+      web 1.0 times (which this site is heavily modeled after) I do believe that
+      modern websites are unnecessarly bloated in many ways. They contain ads and
+      trackers (that's just how capitalism works, I can't really complain about
+      that) but also so much useless JavaScript. I agree that it is very useful
+      in certain areas but sometimes it is just not needed. Like in the case of a
+      news site, or a recipe site, which in my opinion could just be served
+      statically without much (or any) JavaScript. Because of this, I created
+      this website, to make a small contribution to the debloated minimal web.
+      Just pure HTML and CSS with some (useful) quality of life JavaScript.
+      No ads, trackers, or cookies.
+      <br>
+      It is also free and Open Source under the GNU
+      General Public License V3, which you can find <a href="/LICENSE.txt">here.</a>
     </p>
   </main>
   <footer>
-    <h6><a href><script>document.write(window.location.href);</script></a></h6>
+    &copy; 2021 - <script>document.write(new Date().getFullYear())</script> Johannes Olzem
+    <br>
+    <small>This website is free software. You can redistribute and modify it under the terms of the GNU General Public License V3.</small>
   </footer>
 </body>
-</html>
+

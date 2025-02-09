@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
   <title>Blog - Johannes Olzem</title>
-  <meta name='description' content="Johannes Olzem's Webspace.">
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='/css/style.css'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='icon' href='/favico.ico'>
+  <meta name="description" content="Johannes Olzem's personal website">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favico.ico">
 </head>
-<body>
+<body class="body">
   <header>
-    <a href='/' class='home-ref'>
-      <img src='/assets/logo.png' alt='Johannes Olzem'>
-      <span>Johannes Olzem</span>
+    <a href="/">
+      <img src="/img/logo.png">
     </a>
-    <nav>
-      <a href='/blog/'>Blog</a>
-      <a href='/about/'>About Me</a>
-      <a href='/contact/'>Contact</a>
-    </nav>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </header>
-  <main class='full'>
+  <main>
+    <h1>Johannes Olzem</h1>
+    <blockquote>Less is more</blockquote>
     <h2>Blog</h2>
-    <div class='blog-entries'>
-      <a href='quick-fixes/'>Quick Fixes</a>
-      <a href='the-current-state-of-software-is-utterly-ridiculous/'>The current state of software is utterly ridiculous</a>
-      <a href='how-to-create-a-rust-server-on-linux/'>How to create a Rust server on Linux</a>
-    </div>
+    <ul>
+      <li>
+        <a href="/blog/quick-fixes/">Quick fixes</a>
+      </li>
+      <li>
+        <a href="/blog/the-current-state-of-software-is-utterly-ridiculous/">
+          The current state of software is utterly ridiculous
+        </a>
+      </li>
+      <li>
+        <a href="/blog/how-to-create-a-rust-server-on-linux/">
+          How to create a Rust server on linux.
+        </a>
+      </li>
+    </ul>
   </main>
   <footer>
-    <h6><a href><script>document.write(window.location.href);</script></a></h6>
+    &copy; 2021 - <script>document.write(new Date().getFullYear())</script> Johannes Olzem
+    <br>
+    <small>This website is free software. You can redistribute and modify it under the terms of the GNU General Public License V3.</small>
   </footer>
 </body>
-</html>
+

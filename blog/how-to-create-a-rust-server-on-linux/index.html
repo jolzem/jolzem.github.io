@@ -1,69 +1,68 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-  <title>How to create a Rust server on Linux - Blog - Johannes Olzem</title>
-  <meta name='description' content="Johannes Olzem's Webspace.">
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='/css/style.css'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel='icon' href='/favico.ico'>
+  <title>How to create a Rust server on Linux - Johannes Olzem</title>
+  <meta name="description" content="Johannes Olzem's personal website">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favico.ico">
 </head>
-<body>
+<body class="body">
   <header>
-    <a href='/' class='home-ref'>
-      <img src='/assets/logo.png' alt='Johannes Olzem'>
-      <span>Johannes Olzem</span>
+    <a href="/">
+      <img src="/img/logo.png">
     </a>
-    <nav>
-      <a href='/blog/'>Blog</a>
-      <a href='/about/'>About Me</a>
-      <a href='/contact/'>Contact</a>
-    </nav>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
   </header>
-  <main>
-    <h1>How to create a Rust server on Linux</h1>
-    <div class='author'>Johannes Olzem</div>
-    <div class='date'>May 23, 2023</div>
+  <main class="blog-entry">
+    <h1>Johannes Olzem</h1>
+    <blockquote>Less is more</blockquote>
+    <h2>How to create a Rust server on Linux</h2>
+    <div class="author">Johannes Olzem</div>
+    <div class="date">May 23, 2023</div>
     <h2>Table of Contents</h2>
     <ul>
-      <li><a href='#Requirements'>Requirements</a></li>
-      <li><a href='#SteamCMD'>SteamCMD</a><br /></li>
-      <li><a href='#Installing'>Installing</a><br /></li>
-      <li><a href='#Running'>Running</a></li>
+      <li><a href="#Requirements">Requirements</a></li>
+      <li><a href="#SteamCMD">SteamCMD</a><br /></li>
+      <li><a href="#Installing">Installing</a><br /></li>
+      <li><a href="#Running">Running</a></li>
     </ul>
-    <h2 id='Requirements'>Requirements</h2>
+    <h2 id="Requirements">Requirements</h2>
     <ul>
       <li>Debian Linux</li>
       <li>&#62;5GB of RAM</li>
       <li>&#62;4.5GB of free disc space</li>
     </ul>
-    <h2 id='SteamCMD'>SteamCMD</h2>
+    <h2 id="SteamCMD">SteamCMD</h2>
     <h3>Configuring the envoirenment</h3>
     <p>
-      Create a user with the name 'steam' and give it a password.
+      Create a user with the name "steam" and give it a password.
     </p>
-    <p class='code'>
+    <p class="code cmd">
       sudo useradd -m steam
     </p>
-    <p class='code'>
+    <p class="code cmd">
       sudo passwd steam
     </p>
     <br />
     <p>
-      When prompted, enter a new password for the 'steam' user. <br />
-      Then switch to the 'steam' user and go to its home folder.
+      When prompted, enter a new password for the "steam" user. <br />
+      Then switch to the "steam" user and go to its home folder.
     </p>
-    <p class='code'>
+    <p class="code cmd">
       su steam
     </p>
-    <p class='code'>
+    <p class="code cmd">
       cd
     </p>
     <br />
     <p>
       Enable the contrib and non-free repositories by changing your <code>/etc/apt/sources.list</code> to resemble the following:
     </p>
-    <p class='code no-dollar' style='text-align:left;'>
+    <p class="code no-dollar" style="text-align:left;">
       deb http://deb.debian.org/debian bullseye main contrib non-free<br />
       deb-src http://deb.debian.org/debian bullseye main contrib non-free<br />
       <br />
@@ -77,15 +76,15 @@
     <p>
       Finally, to install SteamCMD run:
     </p>
-    <p class='code'>
+    <p class="code cmd">
       sudo apt install steamcmd
     </p>
     <br />
-    <h2 id='Installing'>Installing</h2>
+    <h2 id="Installing">Installing</h2>
     <p>
       Run SteamCMD
     </p>
-    <p class='code'>
+    <p class="code cmd">
       steamcmd
     </p>
     <br />
@@ -93,14 +92,14 @@
     After a short update period, a prompt like <code>Steam&#62;</code> should appear.<br />
     To login anonymously type:
     </p>
-    <p class='code no-dollar'>
+    <p class="code">
      login anonymous
     </p>
     <br />
     <p>
       Now install the Rust Dedicated Server application.
     </p>
-    <p class='code no-dollar'>
+    <p class="code">
       app_update 258550
     </p>
     <p>
@@ -109,22 +108,22 @@
       <br />
       Afterwards you can quit the SteamCMD shell.
     </p>
-    <p class='code no-dollar'>
+    <p class="code">
       quit
     </p>
     <br />
-    <h2 id='Running'>Running</h2>
+    <h2 id="Running">Running</h2>
     <p>
       First navigate to the Rust server directory.
     </p>
-    <p class='code'>
+    <p class="code cmd">
       cd ~/Steam/steamapps/common/rust_dedicated
     </p>
     <br />
     <p>
       Finally, start up the Rust server by running:
     </p>
-    <p class='code'>
+    <p class="code cmd">
       ./RustDedicated -batchmode
     </p>
     <br />
@@ -185,14 +184,14 @@
       <tr>
       <td><code>+server.hostname</code>
       </td>
-      <td><code>'Your Server Name'</code>
+      <td><code>"Your Server Name"</code>
       </td>
       <td>The displayed name of your server.
       </td></tr>
       <tr>
       <td><code>+server.identity</code>
       </td>
-      <td><code>'my_server_identity'</code>
+      <td><code>"my_server_identity"</code>
       </td>
       <td>Changes path to your server data rust/server/my_server_identity. Useful for running multiple instances.
       </td></tr>
@@ -227,7 +226,7 @@
       <tr>
       <td><code>+rcon.password</code>
       </td>
-      <td><code>'YourPassword'</code>
+      <td><code>"YourPassword"</code>
       </td>
       <td>Sets the RCON password
       </td></tr>
@@ -236,35 +235,37 @@
       </td>
       <td><code>gamelog.txt</code>
       </td>
-      <td>If you're using a script, you'd better put the current date as a filename, otherwise, it'll be erased on every start.
+      <td>If you"re using a script, you"d better put the current date as a filename, otherwise, it"ll be erased on every start.
       </td></tr>
       <tr>
       <td><code>-silent-crashes</code>
       </td>
       <td><code> - </code>
       </td>
-      <td>Won't display a crash dialog and will restart automatically if server is installed as service.
+      <td>Won"t display a crash dialog and will restart automatically if server is installed as service.
       </td></tr></tbody>
     </table>
     <br />
     <h2>Sources</h2>
     <ul>
       <li>
-        <a href='https://wiki.facepunch.com/rust/Creating-a-server'>Rust Wiki, 'Creating a server'</a>
+        <a href="https://wiki.facepunch.com/rust/Creating-a-server">Rust Wiki, "Creating a server"</a>
       </li>
       <li>
-        <a href='https://developer.valvesoftware.com/wiki/SteamCMD#Linux'>Valve Developer Community, 'SteamCMD'</a>
+        <a href="https://developer.valvesoftware.com/wiki/SteamCMD#Linux">Valve Developer Community, "SteamCMD"</a>
       </li>
       <li>
-        <a href='https://www.rustafied.com/how-to-host-your-own-rust-server'>Rustafied, 'How to: Host your own Rust Dedicated Server'</a>
+        <a href="https://www.rustafied.com/how-to-host-your-own-rust-server">Rustafied, "How to: Host your own Rust Dedicated Server"</a>
       </li>
       <li>
-        <a href='https://developer.valvesoftware.com/wiki/Rust_Dedicated_Server'>Valve Developer Community, 'Rust Dedicated Server'</a>
+        <a href="https://developer.valvesoftware.com/wiki/Rust_Dedicated_Server">Valve Developer Community, "Rust Dedicated Server"</a>
       </li>
     </ul>
   </main>
   <footer>
-    <h6><a href><script>document.write(window.location.href);</script></a></h6>
+    &copy; 2021 - <script>document.write(new Date().getFullYear())</script> Johannes Olzem
+    <br>
+    <small>This website is free software. You can redistribute and modify it under the terms of the GNU General Public License V3.</small>
   </footer>
 </body>
-</html>
+
